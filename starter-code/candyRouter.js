@@ -24,12 +24,24 @@ router.get('/:id', function(req, res) {
 	res.json(candies[x]);
 });
 
-//...
+// This does not work.
 router.put('/:id', function(req, res) {
 	var x = req.params.id - 1;
 	candies[x] = req.body;
+})
+
+// This does not work.
+router.delete(':id', function(req, res) {
+	var x = req.params.id - 1;
+	delete candies[x];
 });
 
 // Fill out the rest of the routes here
 
 module.exports = router;
+
+
+
+
+
+
